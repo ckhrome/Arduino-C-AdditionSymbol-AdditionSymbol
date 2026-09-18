@@ -19,12 +19,11 @@ void loop() {
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);
   distance = duration * 0.034 / 2;
-  if (distance <= 4) {
-    Serial.print("Distance: ");
-    Serial.print(distance);
-    Serial.println("cm");
-    delay(250);
-  } else {
+  if (distance >= 4) {
     Serial.println("STOPPPPPPPPPPPPPP!!!!!1111!!!!!!1!1!1!1!!!!1!!");
   }
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.println("cm");
+  delay(250);
 }
